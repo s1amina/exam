@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новость</title>
+</head>
+<body>
+    <div class="form">
+        <!-- Заголовок новости -->
+        <h1><%= item.title %></h1>
+        
+        <!-- Категория новости -->
+        <h2><%= item.category %></h2>
+        
+        <!-- Постер новости -->
+        <div class="poster">
+            <img src="/uploads/<%= item.poster %>" alt="">
+        </div>
+        
+        <!-- Описание новости -->
+        <p><%= item.description %></p>
+    </div>
+</body>
+</html>

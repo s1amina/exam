@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add User Data</title>
+</head>
+
+<body>
+    <!-- Форма обновления данных пользователя -->
+    <form action="/dashboard/user-data" method="post" enctype="multipart/form-data">
+      
+      <div class="form-data">
+        <h1>Обновление данных пользователя</h1>
+        
+        <!-- Поле для ввода псевдонима -->
+        <label for="nickname">Псевдоним:</label>
+        <div class="info-input">
+          <input type="text" name="nickname" id="nickname" value="<%= userDetails.nickname %>" />
+        </div>
+
+        <!-- Поле для ввода информации "Обо мне" -->
+        <label for="about">Обо мне:</label>
+        <div class="info-input">
+          <textarea name="about" id="about"><%= userDetails.about %></textarea>
+        </div>
+
+        <!-- Поле для загрузки аватара -->
+        <label for="avatarUrl">Аватар:</label>
+        <div class="info-avatar">
+          <input type="file" name="avatar" id="avatar" />
+        </div>
+
+        <!-- Отображение текущего аватара -->
+        <label for="avatarUrl">Текущий аватар:</label>
+        <div class="avatar">
+          <% if (userDetails.avatarUrl) { %>
+            <img src="<%= userDetails.avatarUrl %>" alt="Current Avatar">
+          <% } else { %>
+            <p>Аватар не загружен</p>
+          <% } %>
+        </div>
+
+        <!-- Кнопка для обновления данных пользователя -->
+        <button type="submit">Обновить данные</button>
+      </div>
+    </form>
+</body>
+
+</html>

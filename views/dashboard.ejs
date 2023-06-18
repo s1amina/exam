@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="form">
+        <% if (session.user && session.user.role === 'admin') { %> <!-- Проверка наличия сессии и роли пользователя -->
+            <h1>Панель Админа</h1>
+            <a href="/dashboard/user-data">Добавить данные пользователя</a>
+            <a href="/dashboard/profile/<%= session.user._id %>">Посмотреть Профиль</a>
+            <a href="/dashboard/add-news">Добавить новость</a>
+        <% } else if (session.user && session.user.role === 'user') { %> <!-- Проверка наличия сессии и роли пользователя -->
+            <h1>Панель пользователя</h1>
+            <a href="/dashboard/user-data">Добавить данные пользователя</a>
+            <a href="/dashboard/profile/<%= session.user._id %>">Посмотреть Профиль</a>
+            <a href="/dashboard/add-news">Добавить новость</a>
+        <% } else { %> <!-- Если сессия не установлена -->
+            <h1>Пожалуйста войдите в систему</h1>
+        <% } %>
+    </div>
+</body>
+</html>

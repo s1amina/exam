@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add News</title>
+</head>
+<body>
+    <% if (session.user && session.user.role === 'admin') { %> <!-- Проверяем, если пользователь вошел в сессию и его роль является 'admin' -->
+        <div class="form"> <!-- Открываем блок формы для добавления новости -->
+            <h1>Добавить новость</h1> <!-- Выводим заголовок формы -->
+            <form method="POST" action="/dashboard/add-news" enctype="multipart/form-data"> <!-- Открываем форму для отправки данных на сервер -->
+                <label for="title">Заголовок:</label> <!-- Выводим метку для поля ввода заголовка -->
+                <input type="text" name="title" required> <!-- Создаем поле ввода заголовка -->
+
+                <br>
+
+                <label for="category">Категория:</label> <!-- Выводим метку для поля ввода категории -->
+                <input type="text" name="category" required> <!-- Создаем поле ввода категории -->
+
+                <br>
+
+                <label for="description">Описание:</label> <!-- Выводим метку для текстового поля описания -->
+                <textarea name="description" rows="5"></textarea> <!-- Создаем текстовое поле описания -->
+
+                <br>
+                
+                <label for="poster">Постер:</label> <!-- Выводим метку для поля загрузки постера -->
+                <input type="file" name="poster" id="poster" /> <!-- Создаем поле загрузки постера -->
+
+                <br>
+
+                <button type="submit">Добавить новость</button> <!-- Создаем кнопку для отправки формы -->
+
+            </form> <!-- Закрываем форму -->
+
+            <div class="popup-overlay"> <!-- Открываем блок для всплывающего окна -->
+                <div class="popup"> <!-- Открываем всплывающее окно -->
+                    <h2>Новость добавлена в базу данных!</h2> <!-- Выводим сообщение об успешном добавлении новости -->
+                    <button class="close">Закрыть</button> <!-- Создаем кнопку для закрытия всплывающего окна -->
+                </div> <!-- Закрываем всплывающее окно -->
+            </div> <!-- Закрываем блок для всплывающего окна -->
+
+        </div> <!-- Закрываем блок формы для добавления новости -->
+
+    <% } else { %> <!-- Если пользователь не вошел в сессию или его роль не является 'admin' -->
+        <div class="form"> <!-- Открываем блок формы для добавления новости -->
+            <h1>Добавить новость</h1> <!-- Выводим заголовок формы -->
+            <form method="POST" action="/dashboard/add-news" enctype="multipart/form-data"> <!-- Открываем форму для отправки данных на сервер -->
+                <label for="title">Заголовок:</label> <!-- Выводим метку для поля ввода заголовка -->
+                <input type="text" name="title" required> <!-- Создаем поле ввода заголовка -->
+
+                <br>
+
+                <label for="category">Категория:</label> <!-- Выводим метку для поля ввода категории -->
+                <input type="text" name="category" required> <!-- Создаем поле ввода категории -->
+
+                <br>
+
+                <label for="description">Описание:</label> <!-- Выводим метку для текстового поля описания -->
+                <textarea name="description" rows="5"></textarea> <!-- Создаем текстовое поле описания -->
+
+                <br>
+                
+                <label for="poster">Постер:</label> <!-- Выводим метку для поля загрузки постера -->
+                <input type="file" name="poster" id="poster" /> <!-- Создаем поле загрузки постера -->
+
+                <br>
+
+                <button type="submit">Добавить новость</button> <!-- Создаем кнопку для отправки формы -->
+
+            </form> <!-- Закрываем форму -->
+
+          
+
+        </div> <!-- Закрываем блок формы для добавления новости -->
+    <% } %>
+
+ 
+</body>
+</html>

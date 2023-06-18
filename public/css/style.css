@@ -1,0 +1,137 @@
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("img/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  header {
+    background-color: #a04b4b;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+  }
+  .profile-header {
+    background-image: url('\img\1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  
+  .profile-title {
+    color: #ffffff;
+    font-size: 24px;
+  }
+  nav {
+    background-color: #5e2c2c;
+    color: #ffb2b2;
+    padding: 10px;
+    text-align: center;
+  }
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  section {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+  }
+  h1 {
+    text-align: center;
+  }
+  img {
+    max-width: 100%;
+  }
+  footer {
+    background-color: #a04b4b;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1, h2, p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .menu-button {
+    background-color: #ff8c8c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  .menu {
+    display: none;
+  }
+  
+  .menu.active {
+    display: block;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px 20px;
+  }
+  
+  .item img {
+    max-width: 100%;
+  }
+
+  /* Адаптация для 720px */
+@media (max-width: 720px) {
+  .profile-header {
+    height: 150px;
+  }
+
+  .profile-title {
+    font-size: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Адаптация для 480px */
+@media (max-width: 480px) {
+  .profile-header {
+    height: 100px;
+  }
+
+  .profile-title {
+    font-size: 18px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px 10px;
+  }
+}
+
+button {
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightgray;
+}
+
